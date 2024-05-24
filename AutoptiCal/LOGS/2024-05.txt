@@ -1,0 +1,63 @@
+[13:38:49] 
+--->2024-05-20 13:38:49<--------------------
+
+[13:38:50] True
+[13:38:51] catched:  Traceback (most recent call last):
+  File "C:\Martin\Plocha\DP\StartApp.py", line 131, in <module>
+    window = MyStartUpWindow(splash)
+  File "C:\Martin\Plocha\DP\MyStartUpWindow.py", line 177, in __init__
+    self.loading_gif()
+  File "C:\Martin\Plocha\DP\MyStartUpWindow.py", line 858, in loading_gif
+    gifPath = os_path.join(self.my_settings.starting_folder, "images/loading2.gif")
+AttributeError: 'NoneType' object has no attribute 'starting_folder'
+
+[13:39:41] 
+--->2024-05-20 13:39:41<--------------------
+
+[13:39:41] True
+[13:39:43] catched:  Traceback (most recent call last):
+  File "C:\Martin\Plocha\DP\StartApp.py", line 131, in <module>
+    window = MyStartUpWindow(splash)
+  File "C:\Martin\Plocha\DP\MyStartUpWindow.py", line 177, in __init__
+    self.loading_gif()
+  File "C:\Martin\Plocha\DP\MyStartUpWindow.py", line 858, in loading_gif
+    gifPath = os_path.join(self.my_settings.starting_folder, "images/loading2.gif")
+AttributeError: 'NoneType' object has no attribute 'starting_folder'
+
+[13:39:51] 
+--->2024-05-20 13:39:51<--------------------
+
+[13:39:51] True
+[13:39:53] catched:  Traceback (most recent call last):
+  File "C:\Martin\Plocha\DP\StartApp.py", line 131, in <module>
+    window = MyStartUpWindow(splash)
+  File "C:\Martin\Plocha\DP\MyStartUpWindow.py", line 177, in __init__
+    self.loading_gif()
+  File "C:\Martin\Plocha\DP\MyStartUpWindow.py", line 858, in loading_gif
+    gifPath = os_path.join(self.my_settings.starting_folder, "images/loading2.gif")
+AttributeError: 'NoneType' object has no attribute 'starting_folder'
+
+[13:42:06] 
+--->2024-05-20 13:42:06<--------------------
+
+[13:42:07] True
+[13:42:08] catched:  Traceback (most recent call last):
+  File "C:\Martin\Plocha\DP\StartApp.py", line 131, in <module>
+    window = MyStartUpWindow(splash)
+  File "C:\Martin\Plocha\DP\MyStartUpWindow.py", line 179, in __init__
+    self.show_back()
+  File "C:\Martin\Plocha\DP\MyStartUpWindow.py", line 678, in show_back
+    from ThreadCheckDevicesConnected import ThreadCheckDevicesConnected
+  File "C:\Martin\Plocha\DP\ThreadCheckDevicesConnected.py", line 6, in <module>
+    from SensTemp.ClimateChamber import ClimateChamber
+ModuleNotFoundError: No module named 'SensTemp'
+
+[13:42:33] 
+--->2024-05-20 13:42:33<--------------------
+
+[13:42:33] True
+[13:42:35] START CHECK
+[13:42:52] TERMINATING CHECK THREAD
+[13:42:53] END CHECK
+[13:42:54] START CHECK
+[13:42:56] END CHECK

@@ -1,0 +1,67 @@
+ConnectionKey:
+  DataSource: -
+  UserID: -
+  Password: -
+  IntegratedSecurity: -
+  MultipleActiveResultSets: -
+  PersistSecurityInfo: -
+  ConnectTimeout: 1
+  DatabaseToConnect: -
+CalibrationsToReport:
+  GetParamsAcc: |
+    SELECT [SylexSN],
+           [SylexON],
+           [Customer],
+           [SensorName],
+           [Evaluation],
+           [Timestamp],
+           [Sensitivity],
+           [offset]
+    FROM [DBFOS].[dbo].[tblKalibracia_Accel]
+    WHERE CONVERT(date, [Timestamp]) = CONVERT(date, ?) and CalibrationFinal=1
+  GetParamsStrain: |
+    SELECT  [SylexSN]
+        ,[SylexON]
+        ,[Customer]
+        ,[SensorName]
+        ,[Evaluation]
+        ,[Timestamp]
+        ,[StrainCoeffA]
+        ,[FFL]
+      FROM [DBFOS].[dbo].[tblKalibracia_Strain_External]
+      WHERE CONVERT(date, [Timestamp]) = CONVERT(date, ?) and CalibrationFinal=1
+GetRecordsByONStrain: |
+  SELECT  [SylexSN]
+      ,[SylexON]
+      ,[Customer]
+      ,[SensorName]
+      ,[Evaluation]
+      ,[Timestamp]
+      ,[StrainCoeffA]
+      ,[FFL]
+    FROM [DBFOS].[dbo].[tblKalibracia_Strain_External]
+    WHERE SylexON=? and CalibrationFinal=1
+GetRecordsBySensorType: |
+  SELECT [SylexSN],
+           [SylexON],
+           [Customer],
+           [SensorName],
+           [Evaluation],
+           [Timestamp],
+           [Sensitivity],
+           [offset]
+    FROM [DBFOS].[dbo].[tblKalibracia_Accel]
+    WHERE SensorName=? and CalibrationFinal=1
+GetRecordsBySensorType2: |
+  SELECT [SylexSN],
+           [SylexON],
+           [Customer],
+           [SensorName],
+           [Evaluation],
+           [Timestamp],
+           [Sensitivity],
+           [offset],
+           [Asymmetry],
+           [Flatness]
+    FROM [DBFOS].[dbo].[tblKalibracia_Accel]
+    WHERE SensorName=? and CalibrationFinal=1

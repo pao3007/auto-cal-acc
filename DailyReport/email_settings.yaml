@@ -1,0 +1,6 @@
+smtp_server: 'ip_address'
+port: 25
+sender_email: 'email@email.com'
+user: 'kalibracie'
+sender_password: 'password'
+ssl: false

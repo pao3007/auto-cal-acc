@@ -1,0 +1,12 @@
+app_name: AutoptiCal
+enabled_functionalities:
+  accelerometer: true
+  strain: true
+  temperature: true
+language: en
+last_ref_calib_acc: 2023-09-25
+last_sens_type: Accelerometer
+name_abbre: AOC
+treshold: 180
+version: 0.13
+windows_scale: 1

@@ -1,0 +1,90 @@
+ConnectionKey:
+  InitialCatalog: -
+  DataSource: -
+  UserID: -
+  Password: -
+  IntegratedSecurity: -
+  MultipleActiveResultSets: -
+  PersistSecurityInfo: -
+  ConnectTimeout: 1
+LoadWLDatabase: ISYS
+ExportDatabase: DBFOS
+GetWaveLengthQuery: |
+  SELECT 
+    [Zákazky].[ID] AS [Zakazka], 
+    [Výrobky].[ID] AS [Objednavka], 
+    [Výrobky].[Množstvo], 
+    [Výrobky].[Popis], 
+    [Zákazky].[Divízia], 
+    [Zákazky].[Obchodné meno] AS [Zakaznik], 
+    [Výrobky].[Sensor] 
+  FROM 
+    [Zákazky] 
+  INNER JOIN 
+    [Výrobky] ON [Zákazky].[ID] = [Výrobky].[IDZákazky] 
+  LEFT OUTER JOIN 
+    [ČíselníkNálepky] ON [Výrobky].[ČíselníkNálepkyID] = [ČíselníkNálepky].[ID] 
+  LEFT OUTER JOIN 
+    [VýrobkyNálepky] ON [Výrobky].[ID] = [VýrobkyNálepky].[VýrobkyID] 
+  WHERE 
+    [Výrobky].[ID] = ?
+GetStrainData: |
+  SELECT  [Id]
+    ,[Product]
+    ,[Description]
+    ,[SylexON]
+    ,[SylexSN]
+    ,[Customer]
+    ,[LengthAnchorPointNominal]
+  FROM [DBFOS].[dbo].[tblHlavneUdaje]
+  WHERE SylexSN = ? AND NOT Status = 'Chyba'
+GetInfoForSensor: |
+  SELECT  [Product]
+    ,[Description]
+    ,[SylexON]
+    ,[SylexSN]
+    ,[Customer]
+  FROM [DBFOS].[dbo].[tblHlavneUdaje]
+  WHERE SylexSN = ? AND NOT Status = 'Chyba'
+ExportToDatabaseAcc: |
+  INSERT INTO tblKalibracia_Accel (SylexON, Customer,
+    SylexSN, ErrorCount, CalibrationNumber, CalibrationFinal, Sensitivity, CWL1, CWL2, Flatness, Offset,
+    Asymmetry, RawDataLocation, CalibrationProfile, TempCoef1, TempCoef2, Notes, Timestamp, Operator,
+    ProductDescription, SensorName, Evaluation)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+ExportToDatabaseStrain: |
+  INSERT INTO tblKalibracia_Strain_External (SylexON, Customer,
+    SylexSN, ErrorCount, CalibrationNumber, CalibrationFinal, CWL1, CWL2, StrainCoeffA, FFL, Error,
+    RawDataLocation, CalibrationProfile, MaxStrain, R2regression, RegPoints, Notes, Timestamp, Operator,
+    ProductDescription, SensorName, Evaluation)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+ExportNoteAcc: |
+  UPDATE tblKalibracia_Accel SET Notes = ? WHERE SylexSN = ? AND CalibrationFinal = 1
+ExportNoteStrain: |
+  UPDATE tblKalibracia_Strain_External SET Notes = ? WHERE SylexSN = ? AND CalibrationFinal = 1
+FindMostRecentSN_ACC: |
+  SELECT TOP 1 *
+  FROM tblKalibracia_Accel
+  WHERE SylexSN = ?
+  ORDER BY Id DESC
+FindMostRecentSN_STRAIN: |
+  SELECT TOP 1 *
+  FROM tblKalibracia_Strain_External
+  WHERE SylexSN = ?
+  ORDER BY Id DESC
+UpdateFinalValuesAcc: |
+  UPDATE tblKalibracia_Accel
+  SET CalibrationFinal=0
+  WHERE SylexSN = ? AND CalibrationFinal=1
+UpdateFinalValuesStrain: |
+  UPDATE tblKalibracia_Strain_External
+  SET CalibrationFinal=0
+  WHERE SylexSN = ? AND CalibrationFinal=1
+GetStrainWavelengths: |
+  SELECT Wavelength
+  FROM [DBFOS].[dbo].[tblPeakData]
+  WHERE MedzioperacnaKontrola_XFBG_Id = ?
+GetStrainIDPeak: |
+  SELECT Id
+  FROM [DBFOS].[dbo].[tblMedzioperacnaKontrola_XFBG]
+  WHERE HlavneUdaje_Id = ?

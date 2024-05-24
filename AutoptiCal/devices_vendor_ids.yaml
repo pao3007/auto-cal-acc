@@ -1,0 +1,12 @@
+Accelerometer:
+  optical:
+  - BA8C
+  reference:
+  - 1093
+Strain:
+  optical: null
+  reference:
+  - '0403'
+Temperature:
+  optical: null
+  reference: null

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <ExportSettings>
+    <ExportSetting>
+      <Enabled>true</Enabled>
+      <TrigModeEnabled>false</TrigModeEnabled>
+      <ExportMode>Local</ExportMode>
+      <DisableRawDataLogger>false</DisableRawDataLogger>
+      <RoundToMidnight>false</RoundToMidnight>
+      <ExportToFtp>false</ExportToFtp>
+      <TimeFormat>Default</TimeFormat>
+      <FtpProtocol>Ftp</FtpProtocol>
+      <FtpPort>21</FtpPort>
+      <Interval>300</Interval>
+      <Duration>0</Duration>
+      <SerializationType>CSV</SerializationType>
+      <Interleave>0</Interleave>
+      <Size>0</Size>
+      <ExportFolder>Sentinel2</ExportFolder>
+    </ExportSetting>
+  </ExportSettings>
+  <AlertNotifierSettings>
+    <AlertNotifierSetting>
+      <Connection>
+        <Port>25</Port>
+        <UseSsl>false</UseSsl>
+      </Connection>
+      <Recipients />
+      <AgregationInterval>10</AgregationInterval>
+    </AlertNotifierSetting>
+  </AlertNotifierSettings>
+  <DriverSettings>
+    <MeasurementConfiguration>
+      <SamplingRatePerChannel>800</SamplingRatePerChannel>
+      <LiveGraphLevelOfDetail>1</LiveGraphLevelOfDetail>
+      <DataLoggerTimeFrameInSeconds>300</DataLoggerTimeFrameInSeconds>
+      <SensorMode>Dynamic</SensorMode>
+      <SubstractNoise>false</SubstractNoise>
+      <ChannelCount>1</ChannelCount>
+      <ChannelConfigurations>
+        <ChannelConfiguration>
+          <integrationTimeMcs>40</integrationTimeMcs>
+          <correctionCycleMs>10000</correctionCycleMs>
+          <Index>0</Index>
+          <IntegrationTimeMcs>40</IntegrationTimeMcs>
+          <CorrectionCycleMs>10000</CorrectionCycleMs>
+          <DefaultTreshold>1000</DefaultTreshold>
+        </ChannelConfiguration>
+        <ChannelConfiguration>
+          <integrationTimeMcs>40</integrationTimeMcs>
+          <correctionCycleMs>10000</correctionCycleMs>
+          <Index>1</Index>
+          <IntegrationTimeMcs>40</IntegrationTimeMcs>
+          <CorrectionCycleMs>10000</CorrectionCycleMs>
+          <DefaultTreshold>1000</DefaultTreshold>
+        </ChannelConfiguration>
+        <ChannelConfiguration>
+          <integrationTimeMcs>40</integrationTimeMcs>
+          <correctionCycleMs>10000</correctionCycleMs>
+          <Index>2</Index>
+          <IntegrationTimeMcs>40</IntegrationTimeMcs>
+          <CorrectionCycleMs>10000</CorrectionCycleMs>
+          <DefaultTreshold>1000</DefaultTreshold>
+        </ChannelConfiguration>
+        <ChannelConfiguration>
+          <integrationTimeMcs>40</integrationTimeMcs>
+          <correctionCycleMs>10000</correctionCycleMs>
+          <Index>3</Index>
+          <IntegrationTimeMcs>40</IntegrationTimeMcs>
+          <CorrectionCycleMs>10000</CorrectionCycleMs>
+          <DefaultTreshold>1000</DefaultTreshold>
+        </ChannelConfiguration>
+      </ChannelConfigurations>
+    </MeasurementConfiguration>
+  </DriverSettings>
+  <PeakRangeDefinitions>
+    <PeakRangeDefinition>
+      <Id>d4fce687-4e1a-4015-b0ff-6cc10b54c9cc</Id>
+      <ChannelId>0</ChannelId>
+      <ChannelOrder>1</ChannelOrder>
+      <CustomIntegrationTime>0</CustomIntegrationTime>
+      <Name>R_1_NEW</Name>
+      <RangeStart>1492.667</RangeStart>
+      <RangeEnd>1597.111</RangeEnd>
+      <Treshold>3000</Treshold>
+    </PeakRangeDefinition>
+  </PeakRangeDefinitions>
+  <SensorTemplates />
+  <SensorInputs />
+  <Sensors />
+  <Alerts />
+  <DataLogging>
+    <SensorIds />
+    <PeakRangesIds>
+      <Id>d4fce687-4e1a-4015-b0ff-6cc10b54c9cc</Id>
+    </PeakRangesIds>
+  </DataLogging>
+</Configuration>

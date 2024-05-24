@@ -1,0 +1,48 @@
+calibration:
+  angle_set_freq: 10
+  do_spectrum: 1
+  downsample: 1
+  filter_data: high-pass
+  gain_mark: 150
+  l_flatness: 10
+  optical_sens_tolerance: 0
+  optical_sensitivity: 0
+  phase_mark: 300
+  plot: 0
+  r_flatness: 100
+  reference_sensitivity: 1
+  slope_check: 1
+current: true
+function_generator:
+  generator_id: null
+  generator_max_vpp: 0
+  generator_sweep_start_freq: 0
+  generator_sweep_stop_freq: 0
+  generator_sweep_time: 0
+  generator_sweep_type: SINusoid
+opt_measurement:
+  channels: 1
+  max_acceleration: 0.001
+  project: null
+  sampling_rate: 800
+  sensor_type: Accelerometer
+ref_device:
+  channel: null
+  name: null
+ref_measurement:
+  measure_time: 25
+  number_of_samples_per_channel: 320000
+  sample_rate: 12800
+save_data:
+  S_N: measured_data.csv
+  auto_export: true
+  calibration_export: C:\Users\PC/Documents\Sylex_sensors_export\calibration
+  db_folder: null
+  export_local_server: true
+  main_folder: C:\Users\PC/Documents\Sylex_sensors_export
+  modbus_folder: null
+  opt_export: C:\Users\PC/Documents\Sylex_sensors_export\optical
+  opt_export_raw: C:\Users\PC/Documents\Sylex_sensors_export\optical_raw
+  ref_export: C:\Users\PC/Documents\Sylex_sensors_export\reference
+  ref_export_raw: C:\Users\PC/Documents\Sylex_sensors_export\reference_raw
+  stats_folder: null
