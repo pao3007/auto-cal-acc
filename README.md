@@ -1,5 +1,6 @@
 # Automated Data Collection for Sensor Calibration
 This is public repository for my master thesis. The project contains all of the code and UI of my master thesis, except database configuration and other sofware used with my application like Sentinel-D or MODBUS application.
+AutoptiCal contains code for main app, DailyReport contains reporting proces for calibrations done in one day.
 
 This is initial window where we can select various types and subtypes of sensors, select operator etc. Start button will continue to open main window...
 
